@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Promises</title>
+</head>
+<body>
+    <h1>Nothing to see here!</h1>
+    <h2>Open up the console => </h2>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    $(function() {
+
+
+
+      const pokemonApp = {};
+      pokemonApp.url = 'https://pokeapi.co/api/v2/pokemon/1/';
+
+      // When we store an AJAX request in a variable called pokemonApp.getPokemon, we are storing a promise in a variable:
+      pokemonApp.getPokemon = $.ajax({
+        url: pokemonApp.url,
+        method: 'GET',
+        dataType: 'JSON',
+      });
+
+      // // When we console.log the variable pokemonApp.getPokemon, we get an object with a bunch of methods:
+      // console.log(pokemonApp.getPokemon);
+
+      // pokemonApp.getPokemon.then( (result) => {
+      //   console.log(result);
+      // }).fail((error) => {
+      //   console.log(error);
+      // })
+
+      // create a variable to hold the first promise
+      pokemonApp.pokemonOne = $.ajax({
+        url: 'https://pokeapi.co/api/v2/pokemon/1/',
+        dataType: 'json',
+        method: 'GET'
+      });
+
+      // create a variable to hold the second promise
+      pokemonApp.pokemonTwo = $.ajax({
+        url: 'https://pokeapi.co/api/v2/pokemon/2/',
+        dataType: 'json',
+        method: 'GET'
+      });
+
+      // when we get BOTH pokemon (i.e. when BOTH promises are settled)
+      $.when(pokemonApp.pokemonOne, pokemonApp.pokemonTwo)
+
+        // use the results of those promises
+        .then((caughtPokemonOne, caughtPokemonTwo) => {
+
+          // and show them to us
+          console.log(caughtPokemonOne, caughtPokemonTwo);
+        })
+
+        // if we don't catch 'em all, show us an error
+        .fail((err1, err2) => {
+          console.log(err1, err2);
+        });
+
+        function getPokemon(number) {
+        return $.ajax({
+          url: `https://pokeapi.co/api/v2/pokemon/${number}/`,
+          dataType: 'json',
+          method: 'GET'
+        })
+      }
+
+      const pokeBag = [];
+
+      for (let i = 1; i <= 40; i++) {
+        pokeBag.push( getPokemon(i) );
+      }
+
+      $.when(pokeBag)
+        .then((...results) => {
+          console.log(results);
+        });
+
+    });
+  </script>
+</body>
+</html>
