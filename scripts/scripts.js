@@ -1,48 +1,48 @@
 // Create app namespace to hold all methods
 const ronSwansonApp = {};
 
-const apiUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes/63";
-const diningArray = [];
-const philosophyArray = [];
-const improvementArray = [];
+ronSwansonApp.apiUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes/63";
+ronSwansonApp.diningArray = [];
+ronSwansonApp.philosophyArray = [];
+ronSwansonApp.improvementArray = [];
 
-let foodChoice = 0;
-let philosophyChoice = 0;
-let improvementChoice = 0;
+ronSwansonApp.foodChoice = 0;
+ronSwansonApp.philosophyChoice = 0;
+ronSwansonApp.improvementChoice = 0;
 
 // Collect user input based on user selection
-// ronSwansonApp.userChoice = function () {
+ronSwansonApp.userChoice = function () {
     $('.food').click(function(e){
         e.preventDefault();
         ronSwansonApp.getQuotes();
-        foodChoice = foodChoice + 1;
-        // $('section').append(diningArray[0]);
+        ronSwansonApp.foodChoice = ronSwansonApp.foodChoice + 1;
     })
 
     $('.philosophy').click(function (e) {
         e.preventDefault();
         ronSwansonApp.getQuotes();
-        philosophyChoice = philosophyChoice + 1;
+        ronSwansonApp.philosophyChoice = ronSwansonApp.philosophyChoice + 1;
     })
     // }
     $('.improvement').click(function (e) {
         e.preventDefault();
         ronSwansonApp.getQuotes();
-        improvementChoice = improvementChoice + 1;
+        ronSwansonApp.improvementChoice = ronSwansonApp.improvementChoice + 1;
     })
+}
 
 // Make AJAX request with user inputted data
 ronSwansonApp.getQuotes = function () {
     $.ajax({
-        url: apiUrl,
+        url: ronSwansonApp.apiUrl,
         method: 'GET',
         dataType: 'json'
     }).then(function(results) {
-        if (foodChoice > 0) {
+        if (ronSwansonApp.foodChoice > 0) {
         ronSwansonApp.filterDining(results);
-        } else if (philosophyChoice > 0) {
+        } else if (ronSwansonApp.philosophyChoice > 0) {
         ronSwansonApp.filterPhilosophy(results);
-        } else if (improvementChoice > 0) {
+        } else if (ronSwansonApp.improvementChoice > 0) {
         ronSwansonApp.filterImprovement(results);
         }
     }).fail(() => {
@@ -50,6 +50,7 @@ ronSwansonApp.getQuotes = function () {
     });
 }
 
+// Filter for dining advice
 ronSwansonApp.filterDining = (results) => {
     results.forEach(string => {
         if (
@@ -64,13 +65,13 @@ ronSwansonApp.filterDining = (results) => {
             string.toLowerCase().includes("turkey") ||
             string.toLowerCase().includes("milk")
             === true) {
-            return diningArray.push(string);
+            return ronSwansonApp.diningArray.push(string);
         }
     })
-    console.log('working');
-    $('section').append(diningArray[0]);
+    $('section').append(ronSwansonApp.diningArray[0]);
 }
 
+// Filter array for philosophical advice
 ronSwansonApp.filterPhilosophy = (results) => {
     results.forEach(string => {
         if (
@@ -89,12 +90,13 @@ ronSwansonApp.filterPhilosophy = (results) => {
             string.toLowerCase().includes("effigy") ||
             string.toLowerCase().includes("recommendations")
         === true) {
-            return philosophyArray.push(string)
+            return ronSwansonApp.philosophyArray.push(string)
         }
     })
-    $('section').append(philosophyArray[0]);
+    $('section').append(ronSwansonApp.philosophyArray[0]);
 }
 
+// Filter array for self-improvement advice
 ronSwansonApp.filterImprovement = (results) => {
     results.forEach(string => {
         if (
@@ -114,10 +116,10 @@ ronSwansonApp.filterImprovement = (results) => {
             string.toLowerCase().includes("tears") ||
             string.toLowerCase().includes("friends")
             === true) {
-            return improvementArray.push(string)
+            return ronSwansonApp.improvementArray.push(string)
         }
     })
-    $('section').append(improvementArray[0]);
+    $('section').append(ronSwansonApp.improvementArray[0]);
 }
 
 // Filter array based on user inputted data
@@ -129,7 +131,7 @@ ronSwansonApp.displayInfo = function () {
 
 // Start ronSwansonApp
 ronSwansonApp.init = function () {
-
+    ronSwansonApp.userChoice();
 }
 
 // Once the page is loaded run all functions in ronSwansonApp
