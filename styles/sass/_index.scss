@@ -1,0 +1,82 @@
+.wrapper {
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+h1 {
+	font-family: $headerFont;
+	font-size: calc(2.8rem + (72 - 28) * ((100vw - 320px) / (1800 - 320)));
+	color: white;
+}
+
+h2 {
+	font-family: $quoteFont;
+	font-size: calc(2.4rem + (40 - 24) * ((100vw - 320px) / (1800 - 320)));
+}
+
+html {
+    font-family: $textFont;
+    font-size: 62.5%;
+}
+
+body {
+	background: #000 url("../assets/backgroundLandscape.jpg") center;
+	background-size: cover;
+	height: 100vh;
+}
+
+// main {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+
+form {
+    display: flex;
+	flex-wrap: wrap;
+    margin: 2%;
+    padding: 0px 20px 20px 20px;
+}
+
+p {
+    padding: 20px;
+}
+.quoteDisplay {
+	font-family: $quoteFont;
+	margin: 0;
+	padding: 25px;
+	font-size: calc(2.4rem + (28 - 24) * ((100vw - 320px) / (1800 - 320)));
+}
+
+input[type="image"] {
+    width: calc(33% - 4%);
+    margin: 0 2%;
+}
+
+.speech-bubble {
+	background: #bbf9ff;
+	position: relative;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 21px solid transparent;
+	border-top-color: #bbf9ff;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -10.5px;
+    margin-bottom: -21px;
+	// border-left: 0;
+	// margin-left: -10.5px;
+	// margin-bottom: -21px;
+}
+
+footer {
+	text-align: center;
+}

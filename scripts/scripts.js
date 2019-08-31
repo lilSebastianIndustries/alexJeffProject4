@@ -68,10 +68,14 @@ ronSwansonApp.filterDining = (results) => {
             return ronSwansonApp.diningArray.push(string);
         }
     })
-    $('section').append(ronSwansonApp.diningArray[0]);
+    const foodQuote = ronSwansonApp.diningArray[0];
+    $('.form').hide();
+    $('.quoteDisplay')
+      .append(`<p class="speech-bubble">${foodQuote}</p>`)
+      .fadeIn("slow");
 }
 
-// Filter array for philosophical advice
+// Filter array for philosophical advice and append on page
 ronSwansonApp.filterPhilosophy = (results) => {
     results.forEach(string => {
         if (
@@ -93,7 +97,11 @@ ronSwansonApp.filterPhilosophy = (results) => {
             return ronSwansonApp.philosophyArray.push(string)
         }
     })
-    $('section').append(ronSwansonApp.philosophyArray[0]);
+    const philosophyQuote = ronSwansonApp.philosophyArray[0];
+    $(".form").hide();
+    $(".quoteDisplay")
+      .append(`<p class="speech-bubble">${philosophyQuote}</p>`)
+      .fadeIn("slow");
 }
 
 // Filter array for self-improvement advice
@@ -119,18 +127,17 @@ ronSwansonApp.filterImprovement = (results) => {
             return ronSwansonApp.improvementArray.push(string)
         }
     })
-    $('section').append(ronSwansonApp.improvementArray[0]);
-}
-
-// Display data on the page
-ronSwansonApp.displayInfo = function () {
-
+    const improvementQuote = ronSwansonApp.improvementArray[0];
+    $(".form").hide();
+    $(".quoteDisplay")
+        .append(`<p class="speech-bubble">${improvementQuote}</p>`)
+        .fadeIn("slow");
 }
 
 // Start ronSwansonApp
 ronSwansonApp.init = function () {
     ronSwansonApp.userChoice();
-}
+};
 
 // Once the page is loaded run all functions in ronSwansonApp
 $(document).ready(function () {
