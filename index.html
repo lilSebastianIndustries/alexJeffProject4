@@ -5,22 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ron Swanson Advice Generator</title>
-    <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Kalam|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Ron Swanson Advice Generator</h1>
+            <h1>Ask Ron Swanson</h1>
         </header>
         <main>
             <section class="form speech-bubble">
                 <form>
                     <h2>What kind of advice are you looking for?</h2>
         
-                    <input type="image" class="food" src="assets/breakfast256.png" value="Food Advice">
-                    <input type="image" class="philosophy" src="assets/philosophy-icon-25.jpg" alt="Philosophical Advice">
-                    <input type="image" class="improvement" src="assets/winner256px.png" alt="Self-Improvement Advice">
+                    <div class="icon animated fadeIn delay-1s">
+                        <input type="image" class="food" src="assets/breakfast256.png" value="Dining Advice" title="Dining Advice">
+                        <label for="food">Dining</label>
+                    </div>
+                    
+                    <div class="icon animated fadeIn delay-2s">
+                        <input type="image" class="philosophy" src="assets/philosophy-icon-25.jpg" alt="Philosophical Advice" title="Philosophical Advice">
+                        <label for="philosophy">Philosophical</label>
+                    </div>
+
+                    <div class="icon animated fadeIn delay-3s">
+                        <input type="image" class="improvement" src="assets/winner256px.png" alt="Self-Improvement Advice" title="Self-Improvement Advice">
+                        <label for="improvement">Self-Improvement</label>
+                    </div>
                 </form>
             </section>
 

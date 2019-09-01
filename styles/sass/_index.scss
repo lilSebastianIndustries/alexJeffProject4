@@ -4,20 +4,38 @@
 	margin: 0 auto;
 }
 
+header {
+	margin-bottom: 15%;
+}
+
 h1 {
 	font-family: $headerFont;
 	font-size: calc(2.8rem + (72 - 28) * ((100vw - 320px) / (1800 - 320)));
 	color: white;
+	text-align: center;
 }
 
 h2 {
 	font-family: $quoteFont;
 	font-size: calc(2.4rem + (40 - 24) * ((100vw - 320px) / (1800 - 320)));
+	text-align: center;
+	line-height: 1.2;
+	font-weight: 400;
+	margin-top: 0;
 }
 
 html {
     font-family: $textFont;
     font-size: 62.5%;
+}
+
+a {
+	color: red;
+	text-decoration: none;
+	transition: 0.3s linear;
+	&:hover {
+		color: blue;
+	}
 }
 
 body {
@@ -26,37 +44,10 @@ body {
 	height: 100vh;
 }
 
-// main {
-//     display: flex;
-//     flex-wrap: wrap;
-// }
-
-form {
-    display: flex;
-	flex-wrap: wrap;
-    margin: 2%;
-    padding: 0px 20px 20px 20px;
-}
-
-p {
-    padding: 20px;
-}
-.quoteDisplay {
-	font-family: $quoteFont;
-	margin: 0;
-	padding: 25px;
-	font-size: calc(2.4rem + (28 - 24) * ((100vw - 320px) / (1800 - 320)));
-}
-
-input[type="image"] {
-    width: calc(33% - 4%);
-    margin: 0 2%;
-}
-
 .speech-bubble {
-	background: #bbf9ff;
+	background: rgba(255, 255, 255, 0.85);
 	position: relative;
-	border-radius: .4em;
+	border-radius: .5em;
 }
 
 .speech-bubble:after {
@@ -67,7 +58,7 @@ input[type="image"] {
 	width: 0;
 	height: 0;
 	border: 21px solid transparent;
-	border-top-color: #bbf9ff;
+	border-top-color: rgba(255, 255, 255, 0.85);
     border-bottom: 0;
     border-right: 0;
     margin-left: -10.5px;
@@ -77,6 +68,56 @@ input[type="image"] {
 	// margin-bottom: -21px;
 }
 
+.form {
+	margin: 0 5%;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 2%;
+	padding: 4%;
+}
+
+.quote {
+	padding: 4%;
+	margin: 0 5%;
+}
+
+.quoteDisplay {
+	font-family: $quoteFont;
+	margin: 0;
+	font-size: calc(2.4rem + (28 - 24) * ((100vw - 320px) / (1800 - 320)));
+}
+
+.icon {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: calc(33% - 4%);
+	margin: 0 2%;
+	input[type="image"] {
+	width: 100%;
+	}
+}
+
+label {
+	margin-top: 5%;
+	text-align: center;
+	font-family: $quoteFont;
+	font-size: 1.2rem;
+	line-height: 1.2;
+}
+
+img {
+	margin-top: 10%;
+	display: block;
+}
+
 footer {
 	text-align: center;
+	background: rgba(255, 255, 255, 0.85);
+	p {
+		margin: 0;
+	}
 }

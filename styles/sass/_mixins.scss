@@ -1,19 +1,21 @@
 // Mixin for media queries
 @mixin forSize($size) {
-  @if $size == portraitPhone {
+  @if $size == abovePortraitPhone {
     @media (min-width: 480px) { @content; }
-  } @else if $size ==  {
+  } @else if $size == aboveLandscapePhone {
     @media (min-width: 768px) { @content; }
-  } @else if $size == belowTabletLandscape {
-    @media (min-width: 900px) { @content; }
-  } @else if $size == belowDesktop {
+  } @else if $size == aboveTabletLandscape {
+    @media (min-width: 990px) { @content; }
+  } @else if $size == aboveDesktop {
     @media (min-width: 1200px) { @content; }
-  } @else if $size == bigDesktopUp {
+  } @else if $size == aboveBigDesktop {
     @media (min-width: 1800px) { @content; }
   }
 }
+
 
 //This is how you include the media query in your scss files! Simply substitue belowPhone for the breakpoint you want to use.
 @include forSize(belowDesktop) {
 // **Insert responsive content here**
 }
+

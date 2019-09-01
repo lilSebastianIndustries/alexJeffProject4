@@ -71,7 +71,7 @@ ronSwansonApp.filterDining = (results) => {
     const foodQuote = ronSwansonApp.diningArray[0];
     $('.form').hide();
     $('.quoteDisplay')
-      .append(`<p class="speech-bubble">${foodQuote}</p>`)
+      .append(`<p class="speech-bubble quote">${foodQuote}</p>`)
       .fadeIn("slow");
 }
 
@@ -100,7 +100,7 @@ ronSwansonApp.filterPhilosophy = (results) => {
     const philosophyQuote = ronSwansonApp.philosophyArray[0];
     $(".form").hide();
     $(".quoteDisplay")
-      .append(`<p class="speech-bubble">${philosophyQuote}</p>`)
+        .append(`<p class="speech-bubble quote">${philosophyQuote}</p>`)
       .fadeIn("slow");
 }
 
@@ -130,7 +130,7 @@ ronSwansonApp.filterImprovement = (results) => {
     const improvementQuote = ronSwansonApp.improvementArray[0];
     $(".form").hide();
     $(".quoteDisplay")
-        .append(`<p class="speech-bubble">${improvementQuote}</p>`)
+        .append(`<p class="speech-bubble quote">${improvementQuote}</p>`)
         .fadeIn("slow");
 }
 
