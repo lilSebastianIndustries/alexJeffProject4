@@ -72,7 +72,7 @@ ronSwansonApp.filterDining = (results) => {
     ronSwansonApp.foodQuote = `
     <div class="speechBubble quoteBubble">
         <p class="quote">${ronSwansonApp.foodQuoteFromArray}</p>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for dining advice and he said, “${ronSwansonApp.foodQuoteFromArray}” #AskRonSwanson at" data-url="https://lilsebastianindustries.github.io/askRonSwanson/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for dining advice and he said, “${ronSwansonApp.foodQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2jVoOxf" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 
     <form class="animated fadeIn delay-2s">
@@ -113,7 +113,7 @@ ronSwansonApp.filterPhilosophy = (results) => {
     ronSwansonApp.philosophyQuote = `
         <div class="speechBubble quoteBubble">
             <p class="quote">${ronSwansonApp.philosophyQuoteFromArray}</p>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for philosophical advice and he said, “${ronSwansonApp.philosophyQuoteFromArray}” #AskRonSwanson at" data-url="https://lilsebastianindustries.github.io/askRonSwanson/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for philosophical advice and he said, “${ronSwansonApp.philosophyQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2jVoOxf" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
         <form class="animated fadeIn delay-2s">
@@ -152,7 +152,7 @@ ronSwansonApp.filterImprovement = (results) => {
     ronSwansonApp.improvementQuote = `
         <div class="speechBubble quoteBubble">
             <p class="quote">${ronSwansonApp.improvementQuoteFromArray}</p>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for self-improvement advice and he said, “${ronSwansonApp.improvementQuoteFromArray}” #AskRonSwanson at" data-url="https://lilsebastianindustries.github.io/askRonSwanson/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for self-improvement advice and he said, “${ronSwansonApp.improvementQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2jVoOxf" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         
         <form class="animated fadeIn delay-2s">
