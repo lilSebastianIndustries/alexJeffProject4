@@ -68,12 +68,23 @@ ronSwansonApp.filterDining = (results) => {
             return ronSwansonApp.diningArray.push(string);
         }
     })
-    const foodQuote = ronSwansonApp.diningArray[0];
+    const foodQuoteFromArray = ronSwansonApp.diningArray[0];
+    const foodQuote = `
+    <div class="speechBubble quoteBubble">
+        <p class="quote">${foodQuoteFromArray}</p>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for dining advice and he said, “${foodQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-via="jeffrudd19, @alexandra_lim" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <form>
+        <button type="submit" class="animated fadeIn delay-2s">Can I ask you something else?</button>
+    </form>`;
     $('.form').hide();
     $('.quoteDisplay')
-      .hide().append(`<p class="speech-bubble quote">${foodQuote}</p>`).fadeIn(1000)
-      .css("position", "static");
+        .hide().append(foodQuote)
+        .fadeIn(1000)
+        .css("position", "static");
 }
+
 
 // Filter array for philosophical advice and append on page
 ronSwansonApp.filterPhilosophy = (results) => {
@@ -97,10 +108,19 @@ ronSwansonApp.filterPhilosophy = (results) => {
             return ronSwansonApp.philosophyArray.push(string)
         }
     })
-    const philosophyQuote = ronSwansonApp.philosophyArray[0];
+    const philosophyQuoteFromArray = ronSwansonApp.philosophyArray[0];
+    const philosophyQuote = `
+        <div class="speechBubble quoteBubble">
+            <p class="quote">${philosophyQuoteFromArray}</p>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for philosophical advice and he said, “${philosophyQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-via="jeffrudd19, @alexandra_lim" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <form>
+            <button type="submit" class="animated fadeIn slow delay-2s">Can I ask you something else?</button>
+        </form>`;
     $(".form").hide();
     $(".quoteDisplay")
-        .hide().append(`<p class="speech-bubble quote">${philosophyQuote}</p>`).fadeIn(1000)
+        .hide().append(`${philosophyQuote}`).fadeIn(1000)
         .css("position", "static");
 }
 
@@ -127,10 +147,19 @@ ronSwansonApp.filterImprovement = (results) => {
             return ronSwansonApp.improvementArray.push(string)
         }
     })
-    const improvementQuote = ronSwansonApp.improvementArray[0];
+    const improvementQuoteFromArray = ronSwansonApp.improvementArray[0];
+    const improvementQuote = `
+        <div class="speechBubble quoteBubble">
+            <p class="quote">${improvementQuoteFromArray}</p>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for self-improvement advice and he said, “${improvementQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-via="jeffrudd19, @alexandra_lim" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        
+        <form>
+            <button type="submit" class="animated fadeIn delay-2s">Can I ask you something else?</button>
+        </form>`
     $(".form").hide();
     $(".quoteDisplay")
-        .hide().append(`<p class="speech-bubble quote">${improvementQuote}</p>`).fadeIn(1000)
+        .hide().append(`${improvementQuote}`).fadeIn(1000)
         .css("position", "static");
 }
 

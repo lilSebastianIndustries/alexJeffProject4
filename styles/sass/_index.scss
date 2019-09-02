@@ -2,6 +2,7 @@
 	max-width: 1200px;
 	width: 90%;
 	margin: 0 auto;
+	padding-bottom: 2.5rem;
 }
 
 header {
@@ -37,7 +38,7 @@ a {
 	color: red;
 	text-decoration: none;
 	transition: 0.3s linear;
-	&:hover {
+	&:hover, &:focus {
 		color: blue;
 	}
 }
@@ -45,7 +46,8 @@ a {
 body {
 	background: #000 url("../assets/backgroundLandscape.jpg") center;
 	background-size: cover;
-	height: 100vh;
+	position: relative;
+  	min-height: 100vh;
 }
 
 main {
@@ -55,13 +57,13 @@ main {
 	}
 }
 
-.speech-bubble {
+.speechBubble {
 	background: rgba(255, 255, 255, 0.85);
 	position: relative;
 	border-radius: 25px;
 }
 
-.speech-bubble:after {
+.speechBubble:after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -130,9 +132,9 @@ form {
 	width: calc(33% - 4%);
 	margin: 0 2%;
 	transition: 0.3s linear;
-	&:hover {
-			transform: scale(1.25);
-		}
+	&:hover, &:focus {
+		transform: scale(1.25);
+	}
 	input[type="image"] {
 		width: 100%;
 	}
@@ -144,6 +146,14 @@ label {
 	font-family: $quoteFont;
 	font-size: 1.2rem;
 	line-height: 1.2;
+
+	@include forSize(abovePortraitPhone) {
+		font-size: 1.6rem;
+	}
+
+	@include forSize (aboveTabletLandscape) {
+		font-size: 1.8rem;
+	}
 }
 
 figure {
@@ -157,20 +167,63 @@ figure {
 	@include forSize(aboveTabletLandscape) {
 		margin-top: 0;
 	}
+}
 
-	img {
-		display: block;
-		margin: 0;
+.quoteBubble {
+	display: flex;
+	.twitter-share-button {
+		justify-content: flex-end;
+		align-content: flex-end;
 	}
+}
+
+button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 8px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: calc(2.4rem + (28 - 24) * ((100vw - 320px) / (1800 - 320)));
+	margin-top: -2%;
+	position: relative;
+	border-radius: 25px;
+	// right: -15%;
+	&:hover, &:focus {
+		border-bottom: 4px solid white;
+	}
+}
+
+button:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: #4CAF50;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+
+img {
+	display: block;
+	margin: 0;
 }
 
 footer {
 	text-align: center;
 	margin: 0;
-	margin-bottom: 0;
 	background: rgba(255, 255, 255, 0.85);
+	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	height: 2.5rem;            /* Footer height */
 	p {
-		// margin-bottom: 0;
 		margin: 0;
 	}
 }
