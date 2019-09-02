@@ -1,8 +1,7 @@
 .wrapper {
-	max-width: 1200px;
+	max-width: 1000px;
 	width: 90%;
 	margin: 0 auto;
-	padding-bottom: 2.5rem;
 }
 
 header {
@@ -70,12 +69,12 @@ main {
 	left: 50%;
 	width: 0;
 	height: 0;
-	border: 21px solid transparent;
+	border: 20px solid transparent;
 	border-top-color: rgba(255, 255, 255, 0.85);
-    border-bottom: 0;
-    border-right: 0;
-    margin-left: -10.5px;
-    margin-bottom: -21px;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
 	
 	@include forSize(aboveLandscapePhone) {
 		left: 0;
@@ -97,7 +96,6 @@ main {
 	@include forSize(aboveLandscapePhone) {
 		width: 50%;
 		margin: 0;
-		margin-top: 5%;
 	}
 }
 
@@ -156,7 +154,7 @@ label {
 	}
 }
 
-figure {
+main figure {
 	margin-top: 10%;
 	margin-bottom: 0;
 
@@ -169,45 +167,53 @@ figure {
 	}
 }
 
-.quoteBubble {
-	display: flex;
-	.twitter-share-button {
-		justify-content: flex-end;
-		align-content: flex-end;
-	}
+.twitter-share-button {
+	margin: 0 40%;
 }
 
 button {
-	background-color: #4CAF50;
+	background-color: rgba(255, 255, 255, 0.85);
 	border: none;
-	color: white;
+	color: rgba(3, 100, 36, 1);
 	padding: 8px 16px;
 	text-align: center;
 	text-decoration: none;
 	display: block;
 	font-size: calc(2.4rem + (28 - 24) * ((100vw - 320px) / (1800 - 320)));
-	margin-top: -2%;
+	margin-top: 5%;
 	position: relative;
-	border-radius: 25px;
-	// right: -15%;
+	border-radius: 20px;
 	&:hover, &:focus {
-		border-bottom: 4px solid white;
-	}
+		color: #000;
+	} 
 }
 
 button:after {
 	content: '';
 	position: absolute;
-	right: 0;
-	top: 50%;
+	bottom: 0;
+	left: 50%;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-left-color: #4CAF50;
-	border-right: 0;
-	border-top: 0;
-	margin-top: -10px;
-	margin-right: -20px;
+	border-top-color: rgba(255, 255, 255, 0.85);
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+	@include forSize(aboveLandscapePhone) {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 0;
+		height: 0;
+		border: 20px solid transparent;
+		border-right-color: rgba(255, 255, 255, 0.85);
+		border-left: 0;
+		border-top: 0;
+		margin-top: -10px;
+		margin-left: -20px;
+	}
 }
 
 img {
@@ -216,14 +222,56 @@ img {
 }
 
 footer {
+	background: rgba(255, 255, 255, 0.75);
+}
+
+footer .wrapper {
 	text-align: center;
-	margin: 0;
-	background: rgba(255, 255, 255, 0.85);
-	position: absolute;
-  	bottom: 0;
-  	width: 100%;
-  	height: 2.5rem;            /* Footer height */
+	margin: 0 auto;
+
+	@include forSize(abovePortraitPhone) {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	figure {
+
+		@include forSize(abovePortraitPhone) {
+			width: 30%;
+			align-self: center;
+		}
+
+		@include forSize(aboveLandscapePhone) {
+			width: 40%;
+		}
+		
+		img {
+			max-width: 200px;
+			width: 33%;
+			margin: 0 auto;
+
+			@include forSize(abovePortraitPhone) {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.footerText {
+	@include forSize(abovePortraitPhone) {
+		width: calc(70% - 10%);
+		margin: 5% 0;
+		text-align: left;
+	}
+
+	@include forSize(aboveLandscapePhone) {
+		width: calc(60% - 10%);
+		padding: 5% 0;
+		margin: 0.5% 0;
+	}
+
 	p {
-		margin: 0;
+		margin: 0 auto;
+		font-size: calc(1.2rem + (18 - 12) * ((100vw - 320px) / (1800 - 320)));
 	}
 }

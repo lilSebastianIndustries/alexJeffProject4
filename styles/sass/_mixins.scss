@@ -6,16 +6,5 @@
     @media (min-width: 768px) { @content; }
   } @else if $size == aboveTabletLandscape {
     @media (min-width: 940px) { @content; }
-  } @else if $size == aboveDesktop {
-    @media (min-width: 1200px) { @content; }
-  } @else if $size == aboveBigDesktop {
-    @media (min-width: 1800px) { @content; }
   }
 }
-
-
-//This is how you include the media query in your scss files! Simply substitue belowPhone for the breakpoint you want to use.
-@include forSize(belowDesktop) {
-// **Insert responsive content here**
-}
-

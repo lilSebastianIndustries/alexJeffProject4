@@ -184,10 +184,9 @@ img {
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1000px;
   width: 90%;
   margin: 0 auto;
-  padding-bottom: 2.5rem;
 }
 
 header {
@@ -264,12 +263,12 @@ body {
   left: 50%;
   width: 0;
   height: 0;
-  border: 21px solid transparent;
+  border: 20px solid transparent;
   border-top-color: rgba(255, 255, 255, 0.85);
   border-bottom: 0;
-  border-right: 0;
-  margin-left: -10.5px;
-  margin-bottom: -21px;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
 }
 
 @media (min-width: 768px) {
@@ -295,7 +294,6 @@ body {
   .form {
     width: 50%;
     margin: 0;
-    margin-top: 5%;
   }
 }
 
@@ -373,68 +371,74 @@ label {
   }
 }
 
-figure {
+main figure {
   margin-top: 10%;
   margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-  figure {
+  main figure {
     width: 50%;
   }
 }
 
 @media (min-width: 940px) {
-  figure {
+  main figure {
     margin-top: 0;
   }
 }
 
-.quoteBubble {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.quoteBubble .twitter-share-button {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
+.twitter-share-button {
+  margin: 0 40%;
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: rgba(255, 255, 255, 0.85);
   border: none;
-  color: white;
+  color: #036424;
   padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   display: block;
   font-size: calc(2.4rem + (28 - 24) * ((100vw - 320px) / (1800 - 320)));
-  margin-top: -2%;
+  margin-top: 5%;
   position: relative;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 button:hover, button:focus {
-  border-bottom: 4px solid white;
+  color: #000;
 }
 
 button:after {
   content: '';
   position: absolute;
-  right: 0;
-  top: 50%;
+  bottom: 0;
+  left: 50%;
   width: 0;
   height: 0;
   border: 20px solid transparent;
-  border-left-color: #4CAF50;
-  border-right: 0;
-  border-top: 0;
-  margin-top: -10px;
-  margin-right: -20px;
+  border-top-color: rgba(255, 255, 255, 0.85);
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+
+@media (min-width: 768px) {
+  button:after {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right-color: rgba(255, 255, 255, 0.85);
+    border-left: 0;
+    border-top: 0;
+    margin-top: -10px;
+    margin-left: -20px;
+  }
 }
 
 img {
@@ -443,16 +447,68 @@ img {
 }
 
 footer {
-  text-align: center;
-  margin: 0;
-  background: rgba(255, 255, 255, 0.85);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  /* Footer height */
+  background: rgba(255, 255, 255, 0.75);
 }
 
-footer p {
-  margin: 0;
+footer .wrapper {
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  footer .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media (min-width: 480px) {
+  footer .wrapper figure {
+    width: 30%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media (min-width: 768px) {
+  footer .wrapper figure {
+    width: 40%;
+  }
+}
+
+footer .wrapper figure img {
+  max-width: 200px;
+  width: 33%;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  footer .wrapper figure img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  .footerText {
+    width: calc(70% - 10%);
+    margin: 5% 0;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .footerText {
+    width: calc(60% - 10%);
+    padding: 5% 0;
+    margin: 0.5% 0;
+  }
+}
+
+.footerText p {
+  margin: 0 auto;
+  font-size: calc(1.2rem + (18 - 12) * ((100vw - 320px) / (1800 - 320)));
 }

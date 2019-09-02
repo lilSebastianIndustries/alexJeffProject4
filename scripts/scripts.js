@@ -68,21 +68,22 @@ ronSwansonApp.filterDining = (results) => {
             return ronSwansonApp.diningArray.push(string);
         }
     })
-    const foodQuoteFromArray = ronSwansonApp.diningArray[0];
-    const foodQuote = `
+    ronSwansonApp.foodQuoteFromArray = ronSwansonApp.diningArray[0];
+    ronSwansonApp.foodQuote = `
     <div class="speechBubble quoteBubble">
-        <p class="quote">${foodQuoteFromArray}</p>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for dining advice and he said, “${foodQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-via="jeffrudd19, @alexandra_lim" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <p class="quote">${ronSwansonApp.foodQuoteFromArray}</p>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for dining advice and he said, “${ronSwansonApp.foodQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 
-    <form>
-        <button type="submit" class="animated fadeIn delay-2s">Can I ask you something else?</button>
+    <form class="animated fadeIn delay-2s">
+        <button type="submit" class="animated infinite pulse slower">Ask me something else or get out of my sight.</button>
     </form>`;
     $('.form').hide();
-    $('.quoteDisplay')
-        .hide().append(foodQuote)
-        .fadeIn(1000)
-        .css("position", "static");
+    $(".quoteDisplay")
+      .hide()
+      .append(ronSwansonApp.foodQuote)
+      .fadeIn(1000)
+      .css("position", "static");
 }
 
 
@@ -108,19 +109,19 @@ ronSwansonApp.filterPhilosophy = (results) => {
             return ronSwansonApp.philosophyArray.push(string)
         }
     })
-    const philosophyQuoteFromArray = ronSwansonApp.philosophyArray[0];
-    const philosophyQuote = `
+    ronSwansonApp.philosophyQuoteFromArray = ronSwansonApp.philosophyArray[0];
+    ronSwansonApp.philosophyQuote = `
         <div class="speechBubble quoteBubble">
-            <p class="quote">${philosophyQuoteFromArray}</p>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for philosophical advice and he said, “${philosophyQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-via="jeffrudd19, @alexandra_lim" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <p class="quote">${ronSwansonApp.philosophyQuoteFromArray}</p>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for philosophical advice and he said, “${ronSwansonApp.philosophyQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
-        <form>
-            <button type="submit" class="animated fadeIn slow delay-2s">Can I ask you something else?</button>
+        <form class="animated fadeIn delay-2s">
+            <button type="submit" class="animated infinite pulse slower">Ask me something else or get out of my sight.</button>
         </form>`;
     $(".form").hide();
     $(".quoteDisplay")
-        .hide().append(`${philosophyQuote}`).fadeIn(1000)
+        .hide().append(ronSwansonApp.philosophyQuote).fadeIn(1000)
         .css("position", "static");
 }
 
@@ -147,25 +148,32 @@ ronSwansonApp.filterImprovement = (results) => {
             return ronSwansonApp.improvementArray.push(string)
         }
     })
-    const improvementQuoteFromArray = ronSwansonApp.improvementArray[0];
-    const improvementQuote = `
+    ronSwansonApp.improvementQuoteFromArray = ronSwansonApp.improvementArray[0];
+    ronSwansonApp.improvementQuote = `
         <div class="speechBubble quoteBubble">
-            <p class="quote">${improvementQuoteFromArray}</p>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for self-improvement advice and he said, “${improvementQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-via="jeffrudd19, @alexandra_lim" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <p class="quote">${ronSwansonApp.improvementQuoteFromArray}</p>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I asked Ron Swanson for self-improvement advice and he said, “${ronSwansonApp.improvementQuoteFromArray}” #AskRonSwanson at" data-url="https://bit.ly/2ZxKZfN" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         
-        <form>
-            <button type="submit" class="animated fadeIn delay-2s">Can I ask you something else?</button>
+        <form class="animated fadeIn delay-2s">
+            <button type="submit" class="animated infinite pulse slower">Ask me something else or get out of my sight.</button>
         </form>`
     $(".form").hide();
     $(".quoteDisplay")
-        .hide().append(`${improvementQuote}`).fadeIn(1000)
+        .hide().append(ronSwansonApp.improvementQuote).fadeIn(1000)
         .css("position", "static");
+}
+
+ronSwansonApp.badgeSwap = () => {
+    $('.approveBadge').click(function () {
+        $(".approveBadge").attr('src', "assets/ron_disapproves.png");
+    });
 }
 
 // Start ronSwansonApp
 ronSwansonApp.init = function () {
     ronSwansonApp.userChoice();
+    ronSwansonApp.badgeSwap();
 };
 
 // Once the page is loaded run all functions in ronSwansonApp
